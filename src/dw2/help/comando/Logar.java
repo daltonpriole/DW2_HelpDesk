@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dw2.help.dao.ProdutoDAO;
+import dw2.help.dao.ChamadoDAO;
 import dw2.help.dao.UsuarioDAO;
-import dw2.help.modelo.Produto;
+import dw2.help.modelo.Chamado;
 import dw2.help.modelo.Usuario;
 
 public class Logar implements Comando {
@@ -25,12 +25,12 @@ public class Logar implements Comando {
 		if(userDAO.verifica(usuario)) {
 			HttpSession sessao =
 					request.getSession(true);
-			ProdutoDAO produtoDAO =
-					new ProdutoDAO();
-			ArrayList<Produto> produtos =
-					produtoDAO.getProdutos();
+			ChamadoDAO chamadoDAO =
+					new ChamadoDAO();
+			ArrayList<Chamado> chamados =
+					chamadoDAO.getChamados();
 			request.getServletContext().
-					setAttribute("produtos", produtos);
+					setAttribute("chamados", chamados);
 
 			if(usuario.getLogin().equals("admin")) {
 				url = "/admin.jsp";

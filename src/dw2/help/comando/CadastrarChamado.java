@@ -14,14 +14,10 @@ public class CadastrarChamado implements Comando {
 	public String executa(HttpServletRequest request,
 			HttpServletResponse response)
 					throws Exception {
-		String codigo = request.getParameter("codigo");
 		String titulo = request.getParameter("titulo");
 		String conteudo = request.getParameter("conteudo");
 		
-		Chamado chamado = new Chamado(
-								Integer.parseInt(codigo),
-								String (titulo),
-								Double.parseDouble(conteudo));
+		Chamado chamado = new Chamado(titulo, conteudo);
 		
 		ChamadoDAO ChamadoDAO = new ChamadoDAO();
 		ChamadoDAO.salvar(chamado);

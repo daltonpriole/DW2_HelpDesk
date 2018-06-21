@@ -24,8 +24,8 @@ public class Chamado {
 		this.setId(id);
 		this.setTitulo(titulo);
 		this.setConteudo(conteudo);
-		this.setConteudo(Retorno);
-		this.setConteudo(estado);
+		this.setRetorno(Retorno);
+		this.setEstado(estado);
 	}
 
 	public int getId() {
