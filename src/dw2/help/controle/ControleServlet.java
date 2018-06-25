@@ -22,7 +22,7 @@ public class ControleServlet extends HttpServlet {
 					throws ServletException,
 					IOException {
 		String parametro = request.getParameter("comando");
-		String nomeComando = "dw2.loja.comando." + parametro;
+		String nomeComando = "dw2.help.comando." + parametro;
 		
 		try {
 			Class classe = Class.forName(nomeComando);

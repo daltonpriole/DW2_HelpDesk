@@ -35,7 +35,7 @@ public class Logar implements Comando {
 			if(usuario.getLogin().equals("admin")) {
 				url = "/admin.jsp";
 			} else {
-				url = "/loja.jsp";
+				url = "/NovoChamado.jsp";
 			}
 			sessao.setAttribute("usuario", usuario);
 		} else {

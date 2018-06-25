@@ -3,28 +3,28 @@ package dw2.help.modelo;
 public class Chamado {
 	private int id;
 	private String titulo;
-	private String conteudo;
-	private String retorno;
+	private String problema;
+	private String solucao;
 	private String estado;
 
 
-	public Chamado(String titulo, String conteudo){
+	public Chamado(String titulo, String problema){
 		this.setTitulo(titulo);
-		this.setConteudo(conteudo);
+		this.setProblema(problema);
 	}
 
-	public Chamado(int id, String titulo, String conteudo){
+	public Chamado(int id, String titulo, String problema){
 		this.setId(id);
 		this.setTitulo(titulo);
-		this.setConteudo(conteudo);
+		this.setProblema(problema);
 	}
 
 	
-	public Chamado(int id, String titulo, String conteudo, String Retorno, String estado) {
+	public Chamado(int id, String titulo, String problema, String solucao, String estado) {
 		this.setId(id);
 		this.setTitulo(titulo);
-		this.setConteudo(conteudo);
-		this.setRetorno(Retorno);
+		this.setProblema(problema);
+		this.setSolucao(solucao);
 		this.setEstado(estado);
 	}
 
@@ -44,21 +44,21 @@ public class Chamado {
 		this.titulo = titulo;
 	}
 
-	public String getConteudo() {
-		return conteudo;
+	public String getProblema() {
+		return problema;
 	}
 
-	public void setConteudo(String conteudo) {
-		this.conteudo = conteudo;
+	public void setProblema(String problema) {
+		this.problema = problema;
 	}
 
 //--------------------------------------------------
-	public String getRetorno() {
-		return retorno;
+	public String getSolucao() {
+		return solucao;
 	}
 
-	public void setRetorno(String retorno) {
-		this.retorno = retorno;
+	public void setSolucao(String solucao) {
+		this.solucao = solucao;
 	}
 
 	

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dw2.help.modelo.Usuario;
-import dw2.help.util.ConnectionLojaFactory;
+import dw2.help.util.ConnectionHelpFactory;
 
 public class UsuarioDAO {
 	
@@ -18,7 +18,7 @@ public class UsuarioDAO {
 		try {
 			String sql = "Insert into usuario (login, senha) " +
 							"values (?, ?)";
-			conn = ConnectionLojaFactory.getConnection();
+			conn = ConnectionHelpFactory.getConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, usuario.getLogin());
 			ps.setString(2, usuario.getSenha());
@@ -39,7 +39,7 @@ public class UsuarioDAO {
 			String sql =
 					"select * from usuario " +
 							"where login=? and senha=?";
-			conn = ConnectionLojaFactory.getConnection();
+			conn = ConnectionHelpFactory.getConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, usuario.getLogin());
 			ps.setString(2, usuario.getSenha());
@@ -67,7 +67,7 @@ public class UsuarioDAO {
 			String sql =
 					"select * from usuario " +
 							"where login=?";
-			conn = ConnectionLojaFactory.getConnection();
+			conn = ConnectionHelpFactory.getConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, usuario.getLogin());
 			rs = ps.executeQuery();

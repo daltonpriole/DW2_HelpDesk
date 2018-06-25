@@ -1,7 +1,9 @@
 package dw2.help.comando;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,18 +21,15 @@ public class CadastrarChamado implements Comando {
 		
 		Chamado chamado = new Chamado(titulo, conteudo);
 		
-		ChamadoDAO ChamadoDAO = new ChamadoDAO();
-		ChamadoDAO.salvar(chamado);
+		ChamadoDAO chamadoDAO = new ChamadoDAO();
+		chamadoDAO.salvar(chamado);
 		
-		ArrayList<Chamado> Chamados =
-				ChamadoDAO.getChamados();
+		ArrayList<Chamado> chamados =
+				chamadoDAO.getChamados();
 		
 		request.getServletContext().
-			setAttribute("Chamados", Chamados);
+			setAttribute("chamados", chamados);
 		
 		return "/admin.jsp";
 	}
-	
-	
-
 }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dw2.help.modelo.Chamado;
-import dw2.help.util.ConnectionLojaFactory;
+import dw2.help.util.ConnectionHelpFactory;
 
 public class ChamadoDAO {
 	
@@ -19,14 +19,14 @@ public class ChamadoDAO {
 			throw new RuntimeException("Chamado não pode se nulo");
 
 		try {
-			conn = ConnectionLojaFactory.getConnection();
+			conn = ConnectionHelpFactory.getConnection();
 			String sql = "insert into chamado " +
-							"(titulo, conteudo, retorno, estado)" +
+							"(titulo, problema, solucao, estado)" +
 								"values (?, ?, ?, ?)";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, chamado.getTitulo());
-			ps.setString(2, chamado.getConteudo());
-			ps.setString(3, chamado.getRetorno());
+			ps.setString(2, chamado.getProblema());
+			ps.setString(3, chamado.getSolucao());
 			ps.setString(4, chamado.getEstado());
 			ps.executeUpdate();
 			conn.close();
@@ -42,7 +42,7 @@ public class ChamadoDAO {
 		
 		try {
 			String sql = "select * from chamado";
-			conn = ConnectionLojaFactory.getConnection();
+			conn = ConnectionHelpFactory.getConnection();
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
@@ -75,7 +75,7 @@ public class ChamadoDAO {
 		
 		try {
 			String sql = "select * from chamado where codigo = ?";
-			conn = ConnectionLojaFactory.getConnection();
+			conn = ConnectionHelpFactory.getConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, codigo);
 			rs = ps.executeQuery();
