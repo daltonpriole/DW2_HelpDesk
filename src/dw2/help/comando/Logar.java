@@ -33,13 +33,13 @@ public class Logar implements Comando {
 					setAttribute("chamados", chamados);
 
 			if(usuario.getLogin().equals("admin")) {
-				url = "/admin.jsp";
+				url = "/cadastro.jsp";
 			} else {
 				url = "/NovoChamado.jsp";
 			}
 			sessao.setAttribute("usuario", usuario);
 		} else {
-			msg = "usuário Inválido";
+			msg = "usuário ou Senha Inválido";
 			request.setAttribute("mensagem", msg);
 		}
 	

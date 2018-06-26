@@ -30,6 +30,6 @@ public class CadastrarChamado implements Comando {
 		request.getServletContext().
 			setAttribute("chamados", chamados);
 		
-		return "/admin.jsp";
+		return "/NovoChamado.jsp";
 	}
 }

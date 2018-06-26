@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Administração da loja</title>
+<title>Administração de Chamados</title>
 </head>
 <body>
 Seja bem vindo, ${usuario.login}

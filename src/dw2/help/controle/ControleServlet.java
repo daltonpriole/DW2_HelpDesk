@@ -1,13 +1,11 @@
 package dw2.help.controle;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import dw2.help.comando.Comando;
 
 /**
@@ -28,8 +26,8 @@ public class ControleServlet extends HttpServlet {
 			Class classe = Class.forName(nomeComando);
 			Comando comando = (Comando) classe.newInstance();
 			String view = comando.executa(request, response);
-			request.getRequestDispatcher(view).
-								forward(request, response);
+			request.getRequestDispatcher(view).forward(request, response);
+			
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
