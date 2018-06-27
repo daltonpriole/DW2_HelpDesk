@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,8 +9,8 @@
   	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Projeto ADS HelpDesk</title>
 </head>
- <body>
-   <!-- Navigation -->
+<body>
+	 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -20,20 +19,14 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" href="http://localhost:8080/Chamados/Index.jsp">System Call</a>
+	      <a class="navbar-brand" href="Index.jsp">System Call
+	      <span class="sr-only">(current)</span></a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li><a href="http://localhost:8080/Chamados/ListarChamados.jsp">Listar Chamado</a></li>
-	        <li><a href="http://localhost:8080/Chamados/NovoChamado.jsp">Novo Chamado</a></li>
-			<li><a href="http://localhost:8080/Chamados/NovoUser.jsp">Novo User</a></li>
-			<li><a href="http://localhost:8080/Chamados/ListarUsers.jsp">Listar Users</a></li>
-			<li><a href="http://localhost:8080/Chamados/Contato.jsp">Contato
-			<span class="sr-only">(current)</span></a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	      	<li><a href="http://localhost:8080/Chamados/Login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	        <li><a href="http://localhost:8080/Chamados/Logoff.jsp"><span class="glyphicon glyphicon-log-off"></span> Logoff</a></li>
+	      	<li><a href="login.jsp">Login</a></li>
+	        <li><a href="Chamado.jsp">Chamado</a></li>
+			<li><a href="Contato.jsp">Contato</a></li>
 	      </ul>
 	    </div>
 	  </div>

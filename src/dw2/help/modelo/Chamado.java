@@ -8,9 +8,11 @@ public class Chamado {
 	private String estado;
 
 
-	public Chamado(String titulo, String problema){
+	public Chamado(String titulo, String problema, String solucao, String estado){
 		this.setTitulo(titulo);
 		this.setProblema(problema);
+		this.setSolucao(solucao);
+		this.setEstado(estado);
 	}
 
 	public Chamado(int id, String titulo, String problema){

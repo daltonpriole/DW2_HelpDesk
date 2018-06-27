@@ -24,8 +24,8 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li><a href="ListarChamados.jsp">Listar Chamado</a></li>
-	        <li><a href="NovoChamado.jsp">Novo Chamado</a></li>
+	      	<li><a href="login.jsp">Login</a></li>
+	        <li><a href="Chamado.jsp">Chamado</a></li>
 			<li><a href="Contato.jsp">Contato</a></li>
 	      </ul>
 	    </div>
@@ -35,13 +35,39 @@
 	<br>
 	<br>
 	
-${mensagem}
-<form method=post action=controle>
-	Login:<input type=text name=login>
-<br>
-	Senha:<input type=password name=senha>
-<br>
-<input type=submit name=comando value=Logar>
-</form>
+	<div class="container-fluid" id='formulario'>
+		<form method=post action=controle>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Login: </label>
+				<div class="col-sm-10">
+					<input type=text name=login> <br>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Senha:</label>
+				<div class="col-sm-10">
+					<input type=password name=senha>
+				</div>
+			</div>
+			${mensagem}
+			<div class="form-group">
+   				<div class="col-sm-offset-2 col-sm-10">
+				
+					<input type=submit name=comando value=Logar>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!--  <form method=post action=controle>
+			Login:<input type=text name=login>
+		<br>
+			Senha:<input type=password name=senha>
+		<br>
+		
+		<br>
+		<input type=submit name=comando value=Logar>
+	</form> -->
+	
 </body>
 </html>

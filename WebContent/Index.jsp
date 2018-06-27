@@ -25,8 +25,8 @@
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
 	      	<li><a href="login.jsp">Login</a></li>
-	        <li><a href="ListarChamados.jsp">Listar Chamado</a></li>
-	        <li><a href="Contato.jsp">Contato</a></li>
+	        <li><a href="Chamado.jsp">Chamado</a></li>
+			<li><a href="Contato.jsp">Contato</a></li>
 	      </ul>
 	    </div>
 	  </div>

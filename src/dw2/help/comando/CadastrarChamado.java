@@ -2,11 +2,9 @@ package dw2.help.comando;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import dw2.help.dao.ChamadoDAO;
 import dw2.help.modelo.Chamado;
 
@@ -18,8 +16,10 @@ public class CadastrarChamado implements Comando {
 					throws Exception {
 		String titulo = request.getParameter("titulo");
 		String conteudo = request.getParameter("conteudo");
+		String solucao = request.getParameter("solucao");
+		String estado = request.getParameter("estado");
 		
-		Chamado chamado = new Chamado(titulo, conteudo);
+		Chamado chamado = new Chamado(titulo, conteudo, solucao, estado);
 		
 		ChamadoDAO chamadoDAO = new ChamadoDAO();
 		chamadoDAO.salvar(chamado);
@@ -30,6 +30,6 @@ public class CadastrarChamado implements Comando {
 		request.getServletContext().
 			setAttribute("chamados", chamados);
 		
-		return "/NovoChamado.jsp";
+		return "/Chamado.jsp";
 	}
 }

@@ -22,7 +22,8 @@ public class ChamadoDAO {
 			conn = ConnectionHelpFactory.getConnection();
 			String sql = "insert into chamado " +
 							"(titulo, problema, solucao, estado)" +
-								"values (?, ?, ?, ?)";
+								"values (?, ?, ?, ?"
+								+ ")";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, chamado.getTitulo());
 			ps.setString(2, chamado.getProblema());
@@ -34,6 +35,30 @@ public class ChamadoDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void editar(Chamado chamado) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		if(chamado == null)
+			throw new RuntimeException("Chamado não pode se nulo");
+
+		try {
+			conn = ConnectionHelpFactory.getConnection();
+			String sql = "update table chamado " +
+							"(solucao, estado)" +
+								"values (?, ?"
+								+ ")";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, chamado.getSolucao());
+			ps.setString(2, chamado.getEstado());
+			ps.executeUpdate();
+			conn.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	
 	public ArrayList<Chamado> getChamados() {
 		Connection conn = null;

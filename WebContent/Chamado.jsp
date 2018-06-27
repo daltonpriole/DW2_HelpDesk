@@ -21,12 +21,12 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" url="/index.jsp">System Call</a>
+	      <a class="navbar-brand" href="Index.jsp">System Call</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li><a href="ListarChamados.jsp">Listar Chamado</a></li>
-	        <li><a href="login.jsp">Logoff</a></li>
+	      	<li><a href="login.jsp">Login</a></li>
+	        <li><a href="Chamados.jsp">Chamado</a></li>
 			<li><a href="Contato.jsp">Contato</a></li>
 	      </ul>
 	    </div>
@@ -53,6 +53,24 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<label class="col-sm-2 control-label">Solucao:</label>
+				<div class="col-sm-10">
+					<textarea name='solucao' class="form-control" rows="3"> </textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Estado(Aberto/Atendendo/Fechado):</label>
+				<div class="col-sm-10">
+					<input class="form-control" name='estado' list="estado" id="estado">
+						<datalist id="estado">
+						  <option value="Atendido">
+						  <option value="Em Analise">
+						  <option value="Em Aberto">
+						</datalist>
+				</div>
+			</div>
+			
+			<div class="form-group">
    				<div class="col-sm-offset-2 col-sm-10">
 					<input type=hidden name=comando value=CadastrarChamado>
 					<input type=submit value=Cadastrar>
@@ -61,6 +79,8 @@
 		</form>
 
 	</div>
+	
+	<form id="vt" action="controle?comando=chamado" method="get">
 	<div class="container-fluid jumbotron" id='menu'>
 		<hr/>
 		<h1>Lista de Chamados</h1>
@@ -68,21 +88,31 @@
 	<div class="container-fluid" id='listChamados'>
 		<table class="table table-bordered table-striped">
 			<tr>
-				<td><strong>id</strong></td>
-				<td><strong>Titulo</strong></td>
-				<td><strong>Conteudo</strong></td>
-				<td><strong>Editar</strong></td>
+				<th><strong>Código</strong></th>
+				<th><strong>Titulo</strong></th>
+				<th><strong>Problema</strong></th>
+				<th><strong>Solução</strong></th>
+				<th><strong>Estado</strong></th>
+				<th><strong>Ações</strong></th>
 			</tr>
-		
-			<c:forEach var="chamado" items="${chamado}">
+				
+			<c:forEach var="chamado" items="${chamados}">
 				<tr>
 					<td>${chamado.id}</td>
 					<td>${chamado.titulo}</td>
-					<td>${chamado.conteudo}</td>
-					<td><a href="EditarChamado.jsp">Edit</a></td>
+					<td>${chamado.problema}</td>
+					<td>${chamado.solucao}</td>
+					<td>${chamado.estado}</td>
+					<td><a href="EditarChamado.jsp">Alterar /</a><a href="">/ Apagar</a></td>
 				</tr>
 			</c:forEach>
+
 		</table>
+
+	</div>
+	</form>
+	
+	
 	</div>
 </body>
 </html>
